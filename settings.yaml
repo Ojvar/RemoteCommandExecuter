@@ -1,6 +1,0 @@
-settings:
-  security_token: xxxxxxxx
-  host: "localhost:3000"
-  services:
-    - service_name: service1
-      path: /path/to/service1
