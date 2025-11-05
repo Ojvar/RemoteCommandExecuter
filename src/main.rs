@@ -2,7 +2,7 @@ mod web_helper;
 mod yaml_helper;
 
 use crate::{
-    web_helper::{get_services, not_found},
+    web_helper::{get_services, not_found, update_services},
     yaml_helper::read_yaml,
 };
 use actix_web::{App, HttpServer, web};
@@ -13,6 +13,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .route("/get-services", web::get().to(get_services))
+            .route("/update-service", web::get().to(update_services))
             .default_service(web::get().to(not_found))
     })
     .bind(settings.host)?

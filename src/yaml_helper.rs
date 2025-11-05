@@ -15,7 +15,7 @@ pub struct Settings {
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct Service {
     pub service_name: String,
-    pub path: String,
+    pub cmd: String,
 }
 
 #[derive(Debug, Deserialize)]
